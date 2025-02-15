@@ -13,6 +13,9 @@
       <ion-button color="danger" shape="round" (click)="land()">
         <ion-icon name="power" slot="icon-only"></ion-icon>
       </ion-button>
+      <ion-button color="#757575" shape="round" [routerLink]="['/guide']">
+        <ion-icon name="help-circle" slot="icon-only"></ion-icon>
+      </ion-button>
     </div>
 
     <div class="top-info">
@@ -41,19 +44,5 @@
         <div class="joystick-label right-label">Belok <br> Kanan</div>
       </div>
     </div>
-    
-    <script src="../../assets/js/Broadway/Player/Decoder.js"></script>
-    <script src="../../assets/js/Broadway/Player/Player.js"></script>
-
-    <!-- Tombol Kamera -->
-    <!-- <div class="camera-toggle">
-      <ion-button fill="clear" size="small" (click)="toggleCamera()">
-        <ion-icon [name]="cameraOn ? 'eye-off' : 'eye'" slot="icon-only"></ion-icon>
-      </ion-button>
-    </div>
-
-    <div class="video-container" [class.video-off]="!cameraOn">
-      <canvas id="drone-video" *ngIf="cameraOn"></canvas>
-    </div> -->
   </div>
 </ion-content>

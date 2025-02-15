@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Panduan Penggunaan</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeGuide()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Panduan Menggunakan Aplikasi</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Ikuti langkah-langkah berikut untuk mengoperasikan drone dengan aplikasi ini.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="wifi" slot="start" class="icon-guide warning-icon"></ion-icon>
+      <ion-label>
+        <h2>1. Sambungkan ke WiFi Drone</h2>
+        <p>
+          Hubungkan perangkat Anda ke WiFi dari drone <b>DJI Tello</b>. Setelah tersambung, buka aplikasi controller.
+        </p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="link" slot="start" class="icon-guide success-icon"></ion-icon>
+      <ion-label>
+        <h2>2. Hubungkan Aplikasi ke Drone</h2>
+        <p>
+          Tekan ikon <b>WiFi</b> berwarna <b>kuning</b> di pojok kanan atas aplikasi untuk menyambungkan ke drone.
+          Pastikan status koneksi berubah menjadi <b>hijau</b> dengan tulisan <b>"Connected"</b> dan indikator drone menyala hijau.
+        </p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="battery-charging" slot="start" class="icon-guide info-icon"></ion-icon>
+      <ion-label>
+        <h2>3. Cek Status Baterai</h2>
+        <p>
+          Setelah terkoneksi, status baterai drone akan ditampilkan di bagian atas aplikasi dalam bentuk persentase.
+        </p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="airplane" slot="start" class="icon-guide success-icon"></ion-icon>
+      <ion-label>
+        <h2>4. Lepas Landas (Takeoff)</h2>
+        <p>
+          Tekan tombol <b>berwarna hijau</b> dengan ikon <b>pesawat</b> di bagian kiri aplikasi untuk menerbangkan drone.
+        </p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="power" slot="start" class="icon-guide danger-icon"></ion-icon>
+      <ion-label>
+        <h2>5. Mendaratkan Drone (Landing)</h2>
+        <p>
+          Tekan tombol <b>berwarna merah</b> untuk mendaratkan drone dengan aman.
+        </p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="game-controller" slot="start" class="icon-guide primary-icon"></ion-icon>
+      <ion-label>
+        <h2>6. Mengontrol Drone dengan Joystick</h2>
+        <p>
+          Aplikasi dilengkapi dengan <b>dua joystick</b> untuk mengendalikan drone:
+        </p>
+        <ul>
+          <li><b>Joystick Kanan</b>: Mengontrol ketinggian (naik/turun) dan arah rotasi (berputar kanan/kiri).</li>
+          <li><b>Joystick Kiri</b>: Menggerakkan drone ke depan, belakang, kanan, dan kiri.</li>
+        </ul>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="button-container">
+    <ion-button expand="full" color="primary" (click)="closeGuide()">Tutup</ion-button>
+  </div>
+</ion-content>

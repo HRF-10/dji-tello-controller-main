@@ -22,7 +22,6 @@ export class HomePage implements AfterViewInit, OnInit {
 
   ngAfterViewInit() {
     this.initJoysticks();
-    this.telloService.startReceivingVideo(); // Memulai penerimaan video setelah inisialisasi komponen
   }
 
   ngOnInit() {
@@ -57,40 +56,42 @@ export class HomePage implements AfterViewInit, OnInit {
   initJoysticks() {
     const movementZone = document.getElementById('movement-joystick');
     const directionalZone = document.getElementById('directional-joystick');
-
+  
     if (movementZone && directionalZone) {
       this.movementJoystick = nipplejs.create({
         zone: movementZone,
         mode: 'static',
         position: { left: '50%', bottom: '62px' },
-        color: 'red',
-        size: 125,
+        size: 120,
+        color: 'blue',
+        restOpacity: 1,
         dynamicPage: true,
       });
-
+  
       this.directionalJoystick = nipplejs.create({
         zone: directionalZone,
         mode: 'static',
         position: { left: '50%', bottom: '62px' },
+        size: 120,
         color: 'blue',
-        size: 125,
+        restOpacity: 1,
         dynamicPage: true,
       });
-
+  
       this.movementJoystick.on('move', (_evt: any, data: any) => {
         this.handleMovementJoystick(data);
       });
-
+  
       this.directionalJoystick.on('move', (_evt: any, data: any) => {
         this.handleDirectionalJoystick(data);
       });
-
+  
       this.movementJoystick.on('end', () => this.resetRC());
       this.directionalJoystick.on('end', () => this.resetRC());
     } else {
       console.error('Joystick elements not found');
     }
-  }
+  }  
 
   handleDirectionalJoystick(data: any) {
     if (this.canSendCommand) {
@@ -139,7 +140,7 @@ export class HomePage implements AfterViewInit, OnInit {
 
   resetRC() {
     this.RC = [0, 0, 0, 0];
-    this.sendCommand('rc 0 0 0 0'); // Hentikan gerakan
+    this.sendCommand('rc 0 0 0 0');
   }
 
   async takeOff() {
@@ -151,13 +152,4 @@ export class HomePage implements AfterViewInit, OnInit {
     console.log('Perintah Landing dikirim');
     await this.sendCommand('land');
   }
-
-  // toggleCamera() {
-  //   this.cameraOn = !this.cameraOn;
-  //   if (this.cameraOn) {
-  //     this.telloService.startVideoStream();
-  //   } else {
-  //     this.telloService.stopVideoStream();
-  //   }
-  // }
 }
